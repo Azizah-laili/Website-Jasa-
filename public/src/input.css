@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.btn{
+    @apply px-2 py-1 mb-2 mr-2 text-sm font-medium text-center text-white rounded-lg shadow-lg from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-r lg:px-8 focus:ring-2 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80;
+}
+.item li{
+  list-style-type: '✅';
+  gap: 20px 70px;
+  width: auto;
+  font-weight: 500;
+  padding-bottom:10px ;
+  text-align: left;
+  font-size: 100%;
+}
+
+.truncate-line-clamp {
+  white-space: nowrap; 
+  width: 50px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.short li:nth-of-type(1n+6){
+  display: none;
+}
+/* CAROUSEL LAYANAN */
+  .wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .carousel{
+    max-width: 1700px;
+    margin: 2px auto;
+    padding: 0 30px;
+  }
+  
+  .carousel .card{
+    text-align: center;
+    line-height: 100px;
+    font-size: 90px;
+    font-weight: 600;
+  }
+
+  .carousel .card{ 
+@apply w-full bg-blue-200 rounded-lg drop-shadow-xl md:w-3/4;  
+}
+
+.rupiah{
+  @apply flex items-start h-full p-2 md:px-5;
+}
+
+.socmed:hover{
+  color: orange;
+}
+
+/* CAROUSEL LOGO */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-210%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: flex;
+  animation: 20s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 50px;
+  margin: 0 40px;
+}
+/* END CAROUSEL LOGO */
+
+@media screen and (min-width: 680px) {
+  .judul{
+    text-align: left;
+    margin-left: 40px;
+    max-width: 90%;
+  }
+
+  .rata{
+    display: flex;
+    justify-content:left;
+    margin-left:40px ;
+  }
+
+  /* CAROUSEL LOGO */
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(239 246 255));
+  }
+
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(239 246 255));
+}
+}
+
+@media screen and (max-width: 680px) {
+  .judul{
+    text-align: center;
+    margin-left: 0;
+    width: auto;
+  }
+  .rata{
+    display: flex;
+    justify-content:center;
+  }
+
+  /* CAROUSEL LOGO */
+  .logos-slide {
+    display: flex;
+    animation: 15s slide infinite linear;
+  }
+}
